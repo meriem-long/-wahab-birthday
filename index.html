@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 19th Birthday Wahab</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&family=Caveat:wght@600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #5b73e8 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            margin: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: cardFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        
+        .sparkle {
+            position: absolute;
+            color: #ffd700;
+            font-size: 14px;
+            animation: sparkleFloat 4s linear infinite;
+            opacity: 0.8;
+        }
+        
+        @keyframes sparkleFloat {
+            0% { 
+                opacity: 0;
+                transform: translateY(100px) scale(0) rotate(0deg);
+            }
+            20% {
+                opacity: 0.8;
+                transform: translateY(80px) scale(1) rotate(90deg);
+            }
+            80% {
+                opacity: 0.8;
+                transform: translateY(-80px) scale(1) rotate(270deg);
+            }
+            100% { 
+                opacity: 0;
+                transform: translateY(-100px) scale(0) rotate(360deg);
+            }
+        }
+        
+        .title {
+            font-family: 'Caveat', cursive;
+            font-size: 2.8rem;
+            text-align: center;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .age {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .message {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #333;
+            text-align: left;
+            margin-bottom: 30px;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .highlight {
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .wishes-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            margin: 25px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .signature {
+            font-family: 'Caveat', cursive;
+            font-size: 1.6rem;
+            text-align: right;
+            color: #764ba2;
+            margin-top: 30px;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .birthday-emoji {
+            font-size: 1.5rem;
+            margin: 0 5px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="birthday-card">
+        <div class="sparkles" id="sparkles"></div>
+        
+        <h1 class="title">Happy Birthday Wahab!</h1>
+        <div class="age">🎉 Celebrating 19 amazing years! 🎉</div>
+        
+        <div class="message">
+            I hope today is absolutely wonderful for you! Getting to know Wahab has honestly been one of the nicest things – you're such a <span class="highlight">genuinely kind and good person</span>, and that really shines through in everything you do.
+            <br><br>
+            There's something truly special about you. Your kindness isn't something you put on – it's just who you are, and it makes such a difference. I really appreciate you as a person, Wahab. The way you treat others, the thoughtfulness you bring to life, your calm presence – <span class="highlight">all of it makes you someone really worth knowing</span>.
+        </div>
+        
+        <div class="wishes-box">
+            <strong>You deserve all the happiness today and always!</strong><br>
+            Having someone like you in the world – someone so genuinely good and kind – it matters more than you probably know. I feel grateful to have gotten to know the person you are.
+        </div>
+        
+        <div class="message">
+            I hope 19 brings you everything beautiful, and I hope you know how appreciated you are! Celebrate today knowing you're truly special. <span class="birthday-emoji">🎂</span><span class="birthday-emoji">🎈</span><span class="birthday-emoji">✨</span>
+        </div>
+        
+        <div class="signature">
+            With warm wishes,<br>
+            Meriem
+        </div>
+    </div>
+
+    <script>
+        // Create floating sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = '✨';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            sparkle.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.getElementById('sparkles').appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 5000);
+        }
+        
+        // Generate sparkles continuously
+        setInterval(createSparkle, 1500);
+        
+        // Initial sparkles
+        for (let i = 0; i < 3; i++) {
+            setTimeout(createSparkle, i * 500);
+        }
+    </script>
+</body>
+</html>
